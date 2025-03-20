@@ -2,7 +2,11 @@
 
 Chainsaw Forensic Timeliner is a PowerShell-based tool that automates the process of aggregating and formatting forensic artifacts from [Chainsaw](https://github.com/WithSecureLabs/chainsaw) into a structured **Master Timeline** in Excel.
 
-This tool is designed for forensic analysts who need to process event logs, MFT, RDP events, and other forensic artifacts efficiently.
+<img width="681" alt="image" src="https://github.com/user-attachments/assets/fed4fdd0-be42-4c67-881f-df96a0e249b5" />
+
+
+
+This tool is designed for forensic analysts who need to quickly timeline and triage using output from Chainsaw mianly focused on event logs, MFT, RDP events, sigma rule and other forensic artifacts efficiently.
 
 ### Special Thanks
 Huge thanks to **WithSecure Countercept** ([FranticTyping](https://twitter.com/FranticTyping), [AlexKornitzer](https://twitter.com/AlexKornitzer)) for creating [Chainsaw](https://github.com/WithSecureLabs/chainsaw), an invaluable tool for forensic analysis.
