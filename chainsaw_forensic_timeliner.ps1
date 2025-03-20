@@ -102,7 +102,24 @@ foreach ($CsvFile in $CsvFiles) {
     $MasterTimeline += $Data
 }
 
-# Export Master Timeline to Excel
-$MasterTimeline | Export-Excel -Path $OutputFile -WorksheetName "Timeline_1" -AutoSize -BoldTopRow -FreezeTopRow -TableName "MasterTimeline"
+# Split Data into Excel Sheets if Row Count Exceeds Excel Limit
+$MaxRowsPerSheet = 1048576
+$TotalRows = $MasterTimeline.Count
+$SheetNumber = 1
 
-Write-Host "Master Timeline created successfully."
+if ($TotalRows -le $MaxRowsPerSheet) {
+    $MasterTimeline | Export-Excel -Path $OutputFile -WorksheetName "Timeline_1" -AutoSize -BoldTopRow -FreezeTopRow -TableName "MasterTimeline"
+} else {
+    Write-Host "Master Timeline exceeds $MaxRowsPerSheet rows. Splitting into multiple sheets..."
+    
+    for ($i = 0; $i -lt $TotalRows; $i += $MaxRowsPerSheet) {
+        $SheetData = $MasterTimeline[$i..($i + $MaxRowsPerSheet - 1)]
+        $SheetName = "Timeline_$SheetNumber"
+
+        $SheetData | Export-Excel -Path $OutputFile -WorksheetName $SheetName -AutoSize -BoldTopRow -FreezeTopRow -TableName "MasterTimeline" -Append
+        Write-Host "Saved $SheetName with $($SheetData.Count) rows."
+        $SheetNumber++
+    }
+}
+
+Write-Host "Master Timeline created successfully with all required fields."
