@@ -9,7 +9,10 @@ Huge thanks to **WithSecure Countercept** ([FranticTyping](https://twitter.com/F
 
 ---
 sample commandline:
-.\chainsaw_forensic_timeline.ps1 -CsvDirectory "C:\KAPE_Output\Chainsaw" -OutputFile "C:\KAPE_Output\Master_Timeline.xlsx"
+.\chainsaw_forensic_timeline.ps1 -CsvDirectory "C:\chainsaw" -OutputFile "C:\chainsaw\Master_Timeline.xlsx"
+
+-CsvDirectory  - the path to your chainsaw output
+-OutputFile - the path to save your timeline to
 
 ## Features
 - Automatically combines all **Chainsaw CSV outputs** into a single **Excel timeline**.
