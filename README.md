@@ -23,19 +23,20 @@ sample commandline:
 - Sorts the final timeline by **Date/Time**.
 
 ---
+## ToDo
+- I am missing some of the rule fields most likely
+- Integrate Kape output
 
 ## Requirements
-
 ### Windows:
 1. **PowerShell** (Version 5.1 or later)
 2. **ImportExcel PowerShell Module** (for Excel support)
    ```powershell
    Install-Module ImportExcel -Force -Scope CurrentUser
-3. Chainsaw (Download Here)
+3. Chainsaw (https://github.com/WithSecureLabs/chainsaw)
 Optional:
 Excel Macro for Color Coding:
 The file color_macro.vbs can be used to apply color coding to each row based on the artifact type.
-
 
 Color Coding (Excel)
 The following artifact types are color-coded for better visibility:
@@ -58,13 +59,12 @@ Output Format
 The final Master_Timeline.xlsx contains the following structured columns:
 
 Column	Description
-Date/Time	Formatted timestamp (MM/DD/YYYY HH:MM:SS)
-Artifact Name	Source of the artifact
-Event ID	Event log ID
-Computer	Hostname of the system
+Date/Time	- Formatted timestamp (MM/DD/YYYY HH:MM:SS)
+Artifact Name	- Source of the artifact
+Event ID	- Event log ID
+Computer	- Hostname of the system
 Detections	MITRE ATT&CK detections (if applicable)
-Threat Path	Key path or process involved
-User	Username associated with the event
-IP Address	IP address (if applicable)
-Service Details	Service type, start type, and account info
-Evidence Path	Original source file location
+Threat Path	- Key path, file or process involved
+User	- Username associated with the event
+IP Address	- IP address (if applicable)
+AND more! I am probably missing some important mappings. Let me know!
