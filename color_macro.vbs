@@ -31,7 +31,14 @@ Sub ColorRowsByArtifactName()
     ' Loop through column B and apply colors
     For Each cell In ws.Range("B2:B" & lastRow)
         If colorMap.Exists(cell.Value) Then
+            ' Apply row background color
             cell.EntireRow.Interior.Color = colorMap(cell.Value)
+            
+            ' If it's a 'sigma' row, also apply white bold font
+            If cell.Value = "sigma" Then
+                cell.EntireRow.Font.Color = RGB(255, 255, 255) ' White font
+                cell.EntireRow.Font.Bold = True
+            End If
         End If
     Next cell
 
