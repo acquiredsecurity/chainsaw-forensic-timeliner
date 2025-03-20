@@ -13,7 +13,7 @@ Huge thanks to **WithSecure Countercept** ([FranticTyping](https://twitter.com/F
 
 ---
 sample commandline:
-.\chainsaw_forensic_timeline.ps1 -CsvDirectory "C:\chainsaw" -OutputFile "C:\chainsaw\Master_Timeline.xlsx"
+.\chainsaw_forensic_timeliner.ps1 -CsvDirectory "C:\chainsaw" -OutputFile "C:\chainsaw\Master_Timeline.xlsx"
 
 -CsvDirectory  - the path to your chainsaw output
 -OutputFile - the path to save your timeline to
