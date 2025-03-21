@@ -1,25 +1,25 @@
-# Chainsaw Forensic Timeliner
+# Forensic Timeliner
 
-Chainsaw Forensic Timeliner is a PowerShell-based tool that automates the process of aggregating and formatting forensic artifacts from [Chainsaw](https://github.com/WithSecureLabs/chainsaw) into a structured **Master Timeline** in Excel.
+Forensic Timeliner is a PowerShell-based tool that automates the process of aggregating and formatting forensic artifacts from [Chainsaw](https://github.com/WithSecureLabs/chainsaw) and KAPE / EZToolsinto a structured **MINI** **Master Timeline** in Excel. This is obviously not comprehensive but a great way to take some high value artifacts and get a real quick snapshot using powershell!
 
-<img width="681" alt="image" src="https://github.com/user-attachments/assets/fed4fdd0-be42-4c67-881f-df96a0e249b5" />
+
 
 
 
 This tool is designed for forensic analysts who need to quickly timeline and triage using output from Chainsaw mianly focused on event logs, MFT, RDP events, sigma rule and other forensic artifacts efficiently.
 
 ### Special Thanks
-Huge thanks to **WithSecure Countercept** ([FranticTyping](https://twitter.com/FranticTyping), [AlexKornitzer](https://twitter.com/AlexKornitzer)) for creating [Chainsaw](https://github.com/WithSecureLabs/chainsaw), an invaluable tool for forensic analysis.
+Incoming
 
 ---
 sample commandline:
-.\chainsaw_forensic_timeliner.ps1 -CsvDirectory "C:\chainsaw" -OutputFile "C:\chainsaw\Master_Timeline.xlsx"
+.\forensic_timeliner.ps1 -CsvDirectory "C:\chainsaw" -OutputFile "C:\chainsaw\Master_Timeline.xlsx"
 
--CsvDirectory  - the path to your chainsaw output
+-CsvDirectory  - the path to your kape and chainsaw output
 -OutputFile - the path to save your timeline to
 
 ## Features
-- Automatically combines all **Chainsaw CSV outputs** into a single **Excel timeline**.
+- Automatically combines all **Chainsaw CSV outputs** and into a single **Excel timeline**.
 - **Normalizes timestamps** into a readable format (MM/DD/YYYY HH:MM:SS).
 - Assigns an **artifact name** to each row for easy identification.
 - Supports **color-coding** for different artifacts (see `color_macro.vbs` for details).
@@ -27,9 +27,7 @@ sample commandline:
 - Sorts the final timeline by **Date/Time**.
 
 ---
-## ToDo
-- I am missing some of the rule fields most likely
-- Integrate Kape output
+
 
 ## Requirements
 ### Windows:
